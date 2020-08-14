@@ -9,6 +9,6 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://api.telegram.org/bot' . $data['token'] . '/sendMessage');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: application/json"));
 curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data['jsonData']);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data['jsonData']));
 curl_exec($ch);
 curl_close($ch);
